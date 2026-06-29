@@ -7,6 +7,7 @@ A RESTful CRUD API built with Spring Boot 4 for managing tasks, with a prebuilt 
 - **Java 25** with Spring Boot 4.1.0
 - **Spring Data JPA** with H2 in-memory database
 - **Spring Validation** for request validation
+- **SpringDoc OpenAPI** for API documentation (Swagger UI)
 - **Docker** for the frontend UI
 
 ## Getting Started
@@ -34,6 +35,20 @@ docker compose up
 The UI will be available at `http://localhost:3000`.
 
 > The frontend connects to the Spring Boot API running on `localhost:8080`.
+
+## API Documentation
+
+Interactive Swagger UI is available at:
+
+```
+http://localhost:8080/swagger-ui/index.html
+```
+
+OpenAPI JSON spec:
+
+```
+http://localhost:8080/v3/api-docs
+```
 
 ## API Endpoints
 
@@ -120,10 +135,10 @@ All errors return a consistent shape:
 }
 ```
 
-| Scenario            | Status |
-|---------------------|--------|
-| Task not found      | 404    |
-| Validation failure  | 400    |
+| Scenario           | Status |
+|--------------------|--------|
+| Task not found     | 404    |
+| Validation failure | 400    |
 
 ## Project Structure
 
@@ -149,6 +164,10 @@ Uses **H2 in-memory database** — data resets on every restart. The H2 console 
 ```
 http://localhost:8080/h2-console
 ```
+
+- **JDBC URL:** `jdbc:h2:mem:testdb`
+- **Username:** `sa`
+- **Password:** *(leave empty)*
 
 ## Running with curl
 
