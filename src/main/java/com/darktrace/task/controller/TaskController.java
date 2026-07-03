@@ -85,7 +85,8 @@ public class TaskController {
     }
 
     @Operation(
-            summary = "Delete a task"
+            summary = "Delete a task",
+            description = "Delete a task by by UUID"
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "400", description = "Bad request from client")
